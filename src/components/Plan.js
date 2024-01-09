@@ -19,7 +19,7 @@ const Plan = () => {
       </div>
 
       <div className="my-[8rem] flex flex-row items-center justify-center gap-7">
-        <Link to="/lineup" className="relative w-[15rem] h-[12rem] border-2 border-gray-300 rounded-xl p-5 flex flex-col justify-start">
+        <Link to="/lineups" className="relative w-[15rem] h-[12rem] border-2 border-gray-300 rounded-xl p-5 flex flex-col justify-start">
           <FaArrowRightLong className="absolute top-0 right-0 mr-3 mt-3 w-[20px] h-[auto]" />
           <CiVideoOn className="w-[2.5rem] h-[auto]" />
           <p className="text-[30px] font-semibold">Learn Lineups</p>

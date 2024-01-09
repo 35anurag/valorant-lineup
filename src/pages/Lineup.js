@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { mapContext } from "../components/MapContext";
+import Lastpart from "../components/Lastpart";
 
 import { IoSyncOutline } from "react-icons/io5";
 
@@ -53,7 +54,7 @@ const Lineup = () => {
             Middle part
           </div>
           <div className="min-w-[18rem] w-0.75/3 overflow-hidden">
-            Last part
+            <Lastpart />
           </div>
         </div>
         <p className="h-[85vh] w-[0.5px] bg-slate-500 absolute top-[5.5rem] right-0 mr-[6rem]"></p>

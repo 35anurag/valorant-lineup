@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {useCookies} from "react-cookie"
+import {useNavigate} from "react-router-dom"
 
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
@@ -8,10 +10,23 @@ import Logo from "../assets/valo-logo.png";
 
 const Navbar = () => {
   const [register, showRegister] = useState(false);
+  const [cookies, setCookies] = useCookies(["access_token"])
+
+  const navigate = useNavigate()
+  
+
+  const handleLogout=()=>{
+    setCookies("access_token", "")
+    window.localStorage.removeItem("userID")
+    navigate("/login") 
+    console.log(cookies)   
+  }
 
   const handleShowRegister = () => {
     showRegister(!register);
   };
+
+  // const username = window.localStorage.getItem("username")
   return (
     <div>
       <div className="bg-[#111111] w-full fixed top-0">
@@ -25,13 +40,17 @@ const Navbar = () => {
             <Link to="/lineups">Lineups</Link>
             <Link to="/create">Create</Link>
           </div>
-          <button
+          {!cookies.access_token ?<button
             className="flex flex-row items-center justify-center gap-2 text-sm font-semibold bg-red-500 p-2 pl-5 pr-5 rounded-full"
             onClick={handleShowRegister}
           >
             <p>Register</p>
             {register ? <FaAngleUp /> : <FaAngleDown />}
-          </button>
+          </button>: <div>
+          {/* <p>{username}</p> */}
+          <button onClick={handleLogout}>Logout</button>
+          </div> }
+          
         </div>
       </div>
       {register && (
