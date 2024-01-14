@@ -11,6 +11,8 @@ import Icebox from "../assets/icebox.webp"
 import Pearl from "../assets/pearl.webp"
 import Sunset from "../assets/sunset.webp"
 
+import Havenmini from "../assets/Haven_minimap.webp"
+
 export const mapContext = createContext()
 
 const MapContextProvider = ({children}) => {
@@ -19,19 +21,19 @@ const MapContextProvider = ({children}) => {
             id: 1,
             name: "Haven",
             map:Haven,
-            mapImg: "",            
+            mapImg: Havenmini,            
         },
         {
             id: 2,
             name: "Split",
             map:Split,
-            mapImg: "",            
+            mapImg: "split",            
         },
         {
             id: 3,
             name: "Fracture",
             map:Fracture,
-            mapImg: "",            
+            mapImg: "fracture",            
         },
         {
             id: 4,
